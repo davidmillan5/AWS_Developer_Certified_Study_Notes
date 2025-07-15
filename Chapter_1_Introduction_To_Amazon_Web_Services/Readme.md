@@ -145,3 +145,34 @@ else:
 ## IAM User, Groups, Roles and Policies
 
 ![User, Group, Roles](https://miro.medium.com/v2/resize:fit:1400/1*CgfJAcRlay0O9amULak-fw.png)
+
+
+## AWS Policy Generator
+
+AWS Policy Generator [Policy Generator](https://awspolicygen.s3.amazonaws.com/policygen.html)
+
+
+## ARN Examples
+
+![ARN Examples](https://files.codingninjas.in/article_images/custom-upload-1691430993-730998de.webp)
+
+
+## IAM Policy Elements
+
+![Create Policy](https://www.msp360.com/resources/wp-content/uploads/2018/10/image4-1-1024x504.png)
+
+
+![Sample Policy](https://res.cloudinary.com/scweiss1/image/upload/v1588091883/code-comments/aws-iam-30-seconds/sample-iam-policy.png)
+
+
+AWS Policy Simulator [Policy Simulator](https://policysim.aws.amazon.com/home/index.jsp#)
+
+
+## Defining a Budget
+
+1. Go to your **root account**
+2. Find the option **Account under the menu**
+3. Click on **IAM user and role access to Billing information**
+4. Activate the option.
+5. Then go to **Budget**
+6. Create a **cost  budget**

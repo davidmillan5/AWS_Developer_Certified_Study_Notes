@@ -71,3 +71,77 @@ aws configure
 ```bash
 aws configure --profile developer
 ```
+
+### Calling an AWS Service
+
+>Explicit way
+
+```python
+import boto3
+
+# Explicit Client Configuration
+polly = boto3.client('polly',
+                     region_name='us-east-2',
+                     aws_access_key_id='YOUR_ACCESS_KEY',
+                     aws_secret_access_key='YOUR_SECRET_KEY')
+
+response = polly.synthesize_speech(Text='Hello World!',
+                                   OutputFormat='mp3',
+                                   VoiceId='Aditi')
+
+# Save the audio from the response
+if 'AudioStream' in response:
+    with response['AudioStream'] as stream:
+        audio = stream.read()
+        with open("helloworld.mp3", "wb") as file:
+            file.write(audio)
+else:
+    print("Could not stream audio")
+
+
+
+```
+
+
+>Implicit way 
+
+```python
+import boto3
+
+# Create a session using the 'developer' profile
+session = boto3.Session(profile_name='developer', region_name='us-east-2')
+
+# Create a Polly client from that session
+polly = session.client('polly')
+
+response = polly.synthesize_speech(Text='Success is not final, failure is not fatal: It is the courage to continue that counts.',
+                                   OutputFormat='mp3',
+                                   VoiceId='Aditi')
+
+# Save the audio from the response
+if 'AudioStream' in response:
+    with response['AudioStream'] as stream:
+        audio = stream.read()
+        with open("quote.mp3", "wb") as file:
+            file.write(audio)
+else:
+    print("Could not stream audio")
+
+
+```
+
+
+## Working with Regions
+
+![AWS regions, availability zones, and data centers](https://www.w3schools.com/aws/images/availabilityzones.png)
+
+
+## AWS Region Names
+
+![AWS region names](https://miro.medium.com/v2/resize:fit:1200/1*-AblB3BySIlz5BixBVsAdA.png)
+
+
+
+## IAM User, Groups, Roles and Policies
+
+![User, Group, Roles](https://miro.medium.com/v2/resize:fit:1400/1*CgfJAcRlay0O9amULak-fw.png)

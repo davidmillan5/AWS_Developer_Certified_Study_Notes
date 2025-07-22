@@ -87,3 +87,35 @@ By default, Linux Amazon EC2 instances provide remote access through Secure Shel
 - Session Manager.
 - EC2 Instance Connect.
 
+
+## Instance Life Cycle
+
+An ***Amazon EC2*** instance has three primary states: running, stopped and terminated.
+
+
+<p align="center">
+  <img src="https://jayendrapatil.com/wp-content/uploads/2020/06/ec2_instance_lifecycle.png" alt="EC2 Lifecycle">
+</p>
+
+
+### Obtaining AWS Credentials
+
+usually when interacting with AWS services via the CLI or various programming language SDKs like boto, you must either explictly provide AWS credentials in the form of an access key ID and secret access key, or ensure that those values are set in environment variables.
+
+> Instance profiles are how you assign an IAM role (with its associated policies) to an instance.
+
+>A role can be used on many instance at once, but an instance can only have one role at a time. To update the permissions on an instance, you can either update the policies attached to its role or swap the attached role at any time.
+
+## Amazon Virtual Private Cloud
+
+***Amazon Virtual Private Cloud (VPC)*** provides isolated networks within your AWS account.
+
+
+### Connecting to Other Networks
+
+By default, an Amazon VPC is an isolated network. Instances within an Amazon VPC cannot communicate with the Internet or other networks until you explicitly create connections.
+
+
+<p align="center">
+  <img src="https://docs.aws.amazon.com/es_es/vpc/latest/userguide/images/how-it-works.png" alt="AWS Virtual Private Network">
+</p>
